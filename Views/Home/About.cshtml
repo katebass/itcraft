@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Travels.Models.TravelViewModels.DateGroup>
+
+@{
+    ViewData["Title"] = "Tours Statistics";
+}
+
+<h2>Tours Statistics</h2>
+
+<table>
+    <tr>
+        <th>
+            Tour date
+        </th>
+        <th>
+            Tours
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @item.ToursCount
+            </td>
+        </tr>
+    }
+</table>
